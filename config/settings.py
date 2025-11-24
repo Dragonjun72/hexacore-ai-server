@@ -32,6 +32,9 @@ class Settings(BaseSettings):
     GOOGLE_CLIENT_SECRET: str = ""
     GOOGLE_REDIRECT_URI: str = ""
 
+    # OpenAI Settings
+    OPENAI_API_KEY: str = ""
+
     class Config:
         env_file = ".env"
         case_sensitive = True

@@ -6,10 +6,6 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     """애플리케이션 전체 설정"""
 
-    # App Settings (선택적 - 기본값 제공)
-    APP_HOST: str = "0.0.0.0"
-    APP_PORT: int = 8000
-
     # MySQL Database Settings (필수)
     MYSQL_HOST: str
     MYSQL_PORT: int

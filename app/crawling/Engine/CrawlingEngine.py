@@ -87,7 +87,7 @@ class CrawlingEngine:
         return articles
 
     # aync test
-    async def article_analysis(self):
+    async def article_analysis(self)-> List[Article]:
         articles=self.crawl_pages()
         return_articles = []
         for article in articles:
@@ -96,8 +96,8 @@ class CrawlingEngine:
             print(f"분석: {type(analysis)}")
             print(f"분석: {(analysis)}")
 
-            articles.append(Article(title=article.title, content=article.content, analysis=analysis))
-
+            return_articles.append(Article(title=article.title, content=article.content, analysis=analysis))
+        return return_articles
 
 
     # 기존 메서드 (호환성 유지)

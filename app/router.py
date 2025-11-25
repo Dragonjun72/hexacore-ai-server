@@ -10,6 +10,7 @@ from app.social_oauth.adapter.input.web.google_oauth2_router import (
 )
 from app.user.adapter.input.web.user_router import user_router
 from app.post_analysis.adapter.input.web.document_analysis_router import post_analysis_router
+from app.crawling.adapter.input.web.crawling_router import crawling_router
 
 # Import ORM models to register them with SQLAlchemy Base
 from app.data.infrastructure.orm.data_orm import DataORM  # noqa: F401
@@ -25,3 +26,4 @@ def setup_routers(app: FastAPI) -> None:
     app.include_router(user_router, prefix="/user")
     app.include_router(post_analysis_router, prefix="/post-analysis")
     app.include_router(data_router, prefix="/data")
+    app.include_router(crawling_router, prefix="/crawling")
